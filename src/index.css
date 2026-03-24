@@ -1,0 +1,316 @@
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  /* background-color: #6b46c1; */
+  background-image: url('/Seeflix.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  color: #ffffff;
+}
+
+/* Layout helpers */
+.container {
+  max-width: 1100px;
+  margin: 24px auto;
+  padding: 0 16px;
+}
+
+/* Header / Navbar */
+.site-header {
+  background: linear-gradient(90deg, #0f172ace, #0b12208c);
+  color: #fff;
+  padding-bottom: 28px;
+}
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 24px;
+  background: #040b19ce;
+  border-bottom: 1px solid #1e293b;
+}
+
+.navbar__logo:hover {
+  opacity: 0.8;
+}
+.navbar__brand {
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.navbar__links {
+  list-style: none;
+  display: flex;
+  gap: 24px;
+  margin: 0;
+  padding: 0;
+  justify-content: center;
+  flex: 1;
+}
+.navbar__links li {
+  opacity: 0.9;
+  cursor: pointer;
+}
+.navbar__links li a {
+  color: #fff !important;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+.navbar__links li a:hover {
+  color: #f8fafc;
+}
+.navbar__links li.active a {
+  color: #fff !important;
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+.navbar__logo:hover{
+  background-color: #1e293b;
+}
+
+/* Hero */
+.hero {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+  padding: 28px 24px 40px;
+}
+.hero__content {
+  max-width: 640px;
+}
+.hero__title {
+  margin: 0 0 12px 0;
+  font-size: 1.8rem;
+}
+.hero__subtitle {
+  margin: 0 0 18px 0;
+  color: #cbd5e1;
+}
+.hero__cta {
+  background: rgba(111, 17, 165, 0.767);
+  border: none;
+  color: #ffffff;
+  padding: 10px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.hero__cta:hover {
+  background: rgba(124, 19, 185, 0.986);
+}
+
+/* MediaList */
+.media-list {
+  margin-top: 28px;
+}
+.media-list__header h3 {
+  margin: 0 0 12px 0;
+}
+.media-list__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 14px;
+}
+
+/* MediaCard */
+.media-card {
+  background: rgba(37, 1, 58, 0.92);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #9f7aea;
+}
+.media-card__cover img {
+  width: 100%;
+  height: 230px;
+  object-fit: cover;
+  display: block;
+}
+.media-card__info {
+  padding: 10px;
+}
+.media-card__title {
+  margin: 0 0 6px 0;
+  font-size: 0.95rem;
+  color: #f8fafc;
+}
+.media-card__rating {
+  color: #facc15;
+  font-weight: 700;
+}
+.media-card__type {
+  background: #7c3aed;
+  color: #fff;
+  border-radius: 12px;
+  padding: 2px 10px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.media-card--tvshow .media-card__type {
+  background: #db2777;
+}
+.media-card--movie .media-card__type {
+  background: #f59e0b;
+}
+
+
+/* Simple responsive tweak */
+@media (max-width: 640px) {
+  .hero {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .media-card__cover img {
+    height: 180px;
+  }
+}
+
+
+/* Footer */
+.footer {
+  background: #040b19ce;
+  color: #eef2ff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 24px;
+  font-size: 0.9rem;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.footer__brand {
+  font-weight: 700;
+  font-size: 1rem;
+}
+.footer__links {
+  display: flex;
+  gap: 12px;
+}
+.footer__links a {
+  color: #cbd5e1;
+  text-decoration: none;
+}
+.footer__links a:hover {
+  color: #6914b8;
+}
+
+/* Media card type/style */
+.media-card__meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 6px;
+}
+.media-card__type {
+  background: #6914b8;
+  color: #6914b8;
+  border-radius: 8px;
+  padding: 2px 8px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.media-card--movie .media-card__type {
+  background: #fdba74;
+  color: #7c2d12;
+}
+.media-card--tvshow .media-card__type {
+  background: #a5b4fc;
+  color: #312e81;
+}
+
+/* About page */
+.about-page section {
+  margin-bottom: 24px;
+}
+.about-page h1,
+.about-page h2 {
+  margin-bottom: 12px;
+}
+
+/* Contact form */
+.contact-form-section {
+  background: #590ea07a;
+  border: 1px solid #6914b8;
+  border-radius: 12px;
+  padding: 20px;
+}
+.contact-form-section h2 {
+  margin-top: 0;
+}
+.contact-form {
+  display: grid;
+  gap: 12px;
+}
+.contact-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-weight: 600;
+}
+.contact-form input,
+.contact-form textarea {
+  padding: 8px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+.contact-form button {
+  align-self: start;
+  background: #6914b8;
+  border: none;
+  color: #ffffff;
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-weight: 700;
+  cursor: pointer;
+}
+.contact-form button:hover {
+  background: #b814b0;
+}
+
+/* Stronger nav link style */
+.navbar__brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.navbar__logo {
+  display: block;
+  object-fit: contain;
+}
+
+.navbar__links li a {
+  color: inherit;
+  text-decoration: none;
+}
+.navbar__links li.active a {
+  font-weight: 700;
+}
+/* Page section spacing */
+.page-header,
+.contact-header {
+  margin-bottom: 24px;
+}
